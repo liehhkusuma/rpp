@@ -1,0 +1,56 @@
+/* ----------------------------------------------------------------
+  Helper
+-----------------------------------------------------------------*/
+.initial_image{ height: 25px; max-width: 100%; border-radius: 3px; }
+.clearfix{ clear: both; }
+
+/* ----------------------------------------------------------------
+  Chosend Select
+-----------------------------------------------------------------*/
+.chosen-container{ margin-top:-26px; }
+.chosen-select{ display: inline !important; width: 100%; height:20px !important; visibility: hidden; }
+
+/* ----------------------------------------------------------------
+  Modal Sorting
+-----------------------------------------------------------------*/
+.modal-sorting{ position: absolute; z-index: 99; }
+
+/* ----------------------------------------------------------------
+   Spinner Loader
+-----------------------------------------------------------------*/
+.spinner { width: 50px; text-align: center; position: relative; margin:auto; }
+.spinner > div { width: 12px; height: 12px; background-color: #fff;  border-radius: 100%; display: inline-block; -webkit-animation: bouncedelay 0.7s infinite ease-in-out; -moz-animation: bouncedelay 0.7s infinite ease-in-out; animation: bouncedelay 0.7s infinite ease-in-out; -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; animation-fill-mode: both; }
+.spinner.spinner-md > div { width: 16px; height: 16px; }
+.spinner.spinner-lg{ width: 80px; }
+.spinner.spinner-lg > div { width: 24px; height: 24px; }
+.spinner.light > div { background-color: #000; }
+.spinner .bounce1 { -webkit-animation-delay: -0.32s; -moz-animation-delay: -0.32s; animation-delay: -0.32s; }
+.spinner .bounce2 { -webkit-animation-delay: -0.16s; -moz-animation-delay: -0.16s; animation-delay: -0.16s; }
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+@-moz-keyframes bouncedelay {
+  0%, 80%, 100% { -moz-transform: scale(0.0) }
+  40% { -moz-transform: scale(1.0) }
+}
+
+.tableorder { box-shadow: 0px 0px 10px #000; -webkit-animation: tableorder 2s infinite linear; -moz-animation: tableorder 2s infinite linear; animation: tableorder 2s infinite linear; }
+@-webkit-keyframes tableorder {
+  0%, { box-shadow: 0px 0px 10px #000; }
+  50% { box-shadow: 0px 0px 10px #f00; }
+  100% { box-shadow: 0px 0px 10px #000; }
+}
+@-moz-keyframes tableorder {
+  0%, { box-shadow: 0px 0px 10px #000; }
+  50%, { box-shadow: 0px 0px 10px #000; }
+  100% { box-shadow: 0px 0px 10px #000; }
+}
+
+.padtop_input{padding-top:10px;}
+.padleft_input{padding-right:0px !important;}
+.padleft_input{padding-left:0px !important;}
+.marbot_input {margin-bottom: 20px;}
+.padtop_nol {padding-top: 2px !important;}
+.col-md-space{position: relative; width: 1%; padding-left:2px; padding-top: 10px; padding-right: 1px; float:left;}
+.txt_left {text-align: left !important; }

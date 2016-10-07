@@ -1,0 +1,4 @@
+cache/session/*
+cache/view/*
+assets/backoffice/images/users/*
+assets/backoffice/images/budget/*

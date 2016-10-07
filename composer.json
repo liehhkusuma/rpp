@@ -1,0 +1,34 @@
+{
+    "require": {
+        "slim/slim": "2.4.0",
+        "dropbox/dropbox-sdk": "1.1.*"
+    },
+    "autoload": {
+    	"files" : [
+    		"libs/Blade/Blade.php",
+            "libs/Paginator/Paginator.php",
+            "libs/LogWriter/LogWriter.php",
+            "libs/SimpleImage.php"
+    	],
+        "classmap": [
+            "libs/Validation"
+        ],
+        "psr-0": {
+        	"" : [
+                "app",
+                "app/models",
+                "app/controllers",
+                "app/controllers/backoffice",
+                "app/helpers",
+                "libs"
+            ],
+            "Illuminate\\View" : "libs/illuminate/view",
+            "Illuminate\\Support" : "libs/illuminate/support",
+            "Illuminate\\Filesystem" : "libs/illuminate/filesystem",
+            "Illuminate\\Events" : "libs/illuminate/events",
+            "Illuminate\\Database" : "libs/illuminate/database",
+            "Illuminate\\Container" : "libs/illuminate/container",
+            "Illuminate\\Validation" : "libs/illuminate/validation"
+        }
+    }
+}
