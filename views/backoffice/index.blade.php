@@ -13,7 +13,7 @@
 	</head>    
     <body>
         <div id="container">
-            <div id="logo">
+            <!-- <div id="logo">
                 <img src="<?php echo assets('bo.images');?>/logo.png" alt="" />
             </div>
             <div id="user">
@@ -24,8 +24,8 @@
                 <div class="text">
                     <h4>Hello,<span class="user_name"></span></h4>
                 </div>
-            </div>
-            <div id="loginbox">
+            </div> -->
+            <div id="loginbox" style="margin-top: 50%;">
                 <form id="loginform" action="{{ route('AuthCtrl:dologin') }}" ajax-form="true">
                     {{ UI::CSRF() }}
     				<p>Enter username and password to continue.</p>

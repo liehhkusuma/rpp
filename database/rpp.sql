@@ -61,21 +61,21 @@ INSERT INTO `bo_user_level` (`bul_id`, `bul_order`, `bul_level_name`, `bul_menu_
 -- Dumping structure for table rpp.registran
 CREATE TABLE IF NOT EXISTS `registran` (
   `p_id` int(11) NOT NULL AUTO_INCREMENT,
-  `p_no_regis` varchar(50) DEFAULT NULL,
-  `p_a1` varchar(200) DEFAULT NULL,
-  `p_a2` varchar(200) DEFAULT NULL,
-  `p_a3` varchar(200) DEFAULT NULL,
-  `p_a4` varchar(200) DEFAULT NULL,
-  `p_a5` varchar(200) DEFAULT NULL,
-  `p_a6` varchar(200) DEFAULT NULL,
+  `p_no_regis` text,
+  `p_a1` text,
+  `p_a2` text,
+  `p_a3` text,
+  `p_a4` text,
+  `p_a5` text,
+  `p_a6` text,
   PRIMARY KEY (`p_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table rpp.registran: ~0 rows (approximately)
+-- Dumping data for table rpp.registran: 1 rows
 DELETE FROM `registran`;
 /*!40000 ALTER TABLE `registran` DISABLE KEYS */;
 INSERT INTO `registran` (`p_id`, `p_no_regis`, `p_a1`, `p_a2`, `p_a3`, `p_a4`, `p_a5`, `p_a6`) VALUES
-	(1, '4', 'http://google.com', 'http://google.com', 'http://google.com', NULL, NULL, NULL);
+	(2, '4', 'google.com', 'google.com', 'google.com', 'google.com', 'google.comasasas', 'google.com');
 /*!40000 ALTER TABLE `registran` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

@@ -21,7 +21,7 @@ class BoUsersElq extends BaseEloquent {
 	/* 
 	* Function: Field Rules Validation And Regular Expression Replace
 	*/
-	protected $fieldRules = [		
+	protected $fieldRules = [
 		"bu_real_name"			=> ["required|minlength:3", ""],
 		"bu_no_regis"			=> ["required|minlength:3", ""],
 		"bu_email"				=> ["required|email", ""],

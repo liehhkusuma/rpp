@@ -20,11 +20,20 @@ app()->post("/users/store", "UserCtrl:store");
 app()->post("/users/update/:id", "UserCtrl:update");
 app()->post("/users/delete/:id", "UserCtrl:delete");
 
-// Registran List
-app()->get("/registran(/:paging)", "RegistranCtrl:list");
-app()->get("/registran/detail/:id", "RegistranCtrl:detail");
-app()->get("/registran/add", "RegistranCtrl:add");
-app()->get("/registran/edit/:id", "RegistranCtrl:edit");
-app()->post("/registran/store", "RegistranCtrl:store");
-app()->post("/registran/update/:id", "RegistranCtrl:update");
-app()->post("/registran/delete/:id", "RegistranCtrl:delete");
+// Registration List
+app()->get("/registration(/:paging)", "RegistrationCtrl:list");
+app()->get("/registration/detail/:id", "RegistrationCtrl:detail");
+app()->get("/registration/add", "RegistrationCtrl:add");
+app()->get("/registration/edit/:id", "RegistrationCtrl:edit");
+app()->post("/registration/store", "RegistrationCtrl:store");
+app()->post("/registration/update/:id", "RegistrationCtrl:update");
+app()->post("/registration/delete/:id", "RegistrationCtrl:delete");
+
+// Registration List
+app()->get("/registration-user(/:paging)", "RegistrationUserCtrl:list");
+app()->get("/registration-user/detail/:id", "RegistrationUserCtrl:detail");
+app()->get("/registration-user/add", "RegistrationUserCtrl:add");
+app()->get("/registration-user/edit/:id", "RegistrationUserCtrl:edit");
+app()->post("/registration-user/store", "RegistrationUserCtrl:store");
+app()->post("/registration-user/update/:id", "RegistrationUserCtrl:update");
+app()->post("/registration-user/delete/:id", "RegistrationUserCtrl:delete");

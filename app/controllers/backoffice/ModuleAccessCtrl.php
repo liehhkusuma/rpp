@@ -1,63 +1,62 @@
 <?php
-class RegistranCtrl extends AdminCtrl{
+class ModuleAccessCtrl extends AdminCtrl{
 
     protected $ctrl = __CLASS__;
-	protected $page = "bo_registran";
-	protected $view = "registran";
-	protected $elq = "BoRegistranElq";
+	protected $page = "bo_user_level";
+	protected $view = "module-access";
+	protected $elq = "BoUserLevelElq";
 
     function listAction($paging = ""){
         $_SESSION['list_page'] = current_url();
         // Searching
         $elq = $this->elq;
         if($keyword = get('keyword')){
-            $elq = $elq->like("p_no_regis,p_a1,p_a2,p_a3,p_a4,p_a5,p_a6", $keyword);
+            $elq = $elq->like("bul_level_name", $keyword);
         }
         // Get Data
         $data = $elq->paginate();
         if(!$data->count() && $paging > 1) redirect_route(__CLASS__.':list', ['paging' => $paging - 1]);
-        foreach ($data->data() as $key => $row) {
-            $field['registran_code'] = "No Registran";
-            if($row->BoUsersElq){
-                $field['registran_code'] = $row->BoUsersElq['bu_no_regis'].' - '.$row->BoUsersElq['bu_real_name'];
-            }
-            $data->setData($key, $field);
-        }
 
         return view('backoffice.'.$this->view.'-list',array_merge($this->view_share(),[
         	'data' => $data,
-            'nav_sidebar' => 'registran',
-            'sidebar' => 'registran',
+            'nav_sidebar' => 'user',
+            'sidebar' => 'access',
         ]));
     }
 
     function addAction(){
         return view('backoffice.'.$this->view.'-add', array_merge($this->view_share(),[
-            'lang' => $this->elq->lang(),
             'validation' => $this->elq->jqv(),
-            'module_access_select' => getSelect(BoUsersElq::where('bu_level', '!=', 0)->where('bu_level', '!=', 1)->active()->get(), 'bu_id', 'bu_real_name'),
-            'nav_sidebar' => 'registran',
-            'sidebar' => 'registran',
+            'menu_role_select' => getSelect('bo_menu', 'bm_id', 'bm_name'),
+            'module_role_select' => getSelect('bo_module', 'bmd_id', 'bmd_name'),
+            'nav_sidebar' => 'user',
+            'sidebar' => 'access',
         ]));
     }
 
     function editAction($id){
         $elq = $this->elq->find($id);
-        // return response($elq);
+
         return view('backoffice.'.$this->view.'-edit', array_merge($this->view_share(),[
             'id' => $id,
             'row' => $elq,
             'status' => $elq->status(),
-            'validation' => $this->elq->jqv('ignore'),
-            'module_access_select' => getSelect(BoUsersElq::where('bu_level', '!=', 0)->where('bu_level', '!=', 1)->active()->get(), 'bu_id', 'bu_real_name'),
-            'nav_sidebar' => 'registran',
-            'sidebar' => 'registran',
+            'validation' => $this->elq->jqv(),
+            'menu_role_select' => getSelect('bo_menu', 'bm_id', 'bm_name'),
+            'module_role_select' => getSelect('bo_module', 'bmd_id', 'bmd_name'),
+            'nav_sidebar' => 'user',
+            'sidebar' => 'access',
         ]));
     }
 
-    function storeAction(){      
+    function storeAction(){
+        $_POST['bul_menu_role'] = post('bul_menu_role') ? implode(',', $_POST['bul_menu_role']) : "";
+        $_POST['bul_module_role'] = post('bul_module_role') ? implode(',', $_POST['bul_module_role']) : "";
+
         $this->elq->fill($_POST);
+
         if($this->elq->isValid()){
+            $this->elq->status(post('status'));
             $this->elq->save();
 
             return response([
@@ -73,11 +72,15 @@ class RegistranCtrl extends AdminCtrl{
     }
 
     function updateAction($id){
+        $_POST['bul_menu_role'] = post('bul_menu_role') ? implode(',', $_POST['bul_menu_role']) : "";
+        $_POST['bul_module_role'] = post('bul_module_role') ? implode(',', $_POST['bul_module_role']) : "";
+
         $elq = $this->elq->find($id);
     	$elq->fill($_POST);
 
-        $field_rules = "p_no_regis,p_a1,p_a2,p_a3,p_a4,p_a5,p_a6";
+        $field_rules = "bul_level_name";
         if($elq->isValid('only', $field_rules)){
+        	$elq->status(post('status'));
         	$elq->save();
 
             return response([

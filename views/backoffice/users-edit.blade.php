@@ -95,7 +95,7 @@
               </div>
             </div>
             <!-- <div class="form-group">
-                <label class="col-sm-2 control-label">{{ $lang['bu_pic'] }}</label>
+                <label class="col-sm-2 control-label">{{ $lang['bu_pic'] }} <span class="asterisk">*</span></label>
                 <div class="col-sm-3 uploader" data-page="{{ $pagename }}" data-btn="Photo" data-type="cropping" data-lang="">
                   <div id="uploaderContainer1" class="gen-btn">
                       <span class="filemsg">

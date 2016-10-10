@@ -21,7 +21,7 @@ class AdminCtrl extends BaseCtrl{
 		];
 	}
 
-    /*function sidebar(){
+    function sidebar(){
 		$get = BoMenuElq::orderBy('bm_parent_id', 'asc')->orderBy('bm_order', 'asc');
     	if(AuthCtrl::menuRole() == 'super')
 			$get = $get->active()->get();
@@ -61,6 +61,6 @@ class AdminCtrl extends BaseCtrl{
 			}
 		}
 		return $menu;
-	}*/
+	}
 
 }

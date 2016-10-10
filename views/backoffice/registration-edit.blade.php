@@ -5,9 +5,8 @@
 <link rel="stylesheet" href="<?php echo assets('bo.css');?>/jquery-ui.css" />
 <link rel="stylesheet" href="<?php echo assets('bo.css');?>/icheck/flat/blue.css" />
 <link rel="stylesheet" href="<?php echo assets('bo.css');?>/unicorn.css" />
-<link rel="stylesheet" href="<?php echo assets('bo.css');?>/colorpicker.css" />
+<link rel="stylesheet" href="<?php echo assets('bo.css');?>/colorpicker.css " />
 <link rel="stylesheet" href="<?php echo assets('bo.css');?>/datepicker.css" />
-
 @stop
 
 @section('vendor_js')
@@ -20,7 +19,7 @@
 
 @section('content')
 <div id="content-header">
-<h1>{{ $page['name'] }} - Update</h1>
+<h1>{{ $page['name'] }} - Edit</h1>
 <div class="btn-group">
   <a href="{{ session('list_page') }}" class="btn btn-large" title="Manage Files"><i class="fa fa-arrow-left"></i> Back</a>
 </div>
@@ -40,52 +39,61 @@
           <span class="icon">
             <i class="fa fa-align-justify"></i>                 
           </span>
-          <h5>Update Content</h5>
+          <h5>Edit Content</h5>
         </div>
         <div class="widget-content nopadding">
           <form id="theform" action="{{ route($ctrl.':update', ['id' => $id]) }}" class="form-horizontal" ajax-form="true">
             <div class="form-group">
-              <label class="col-sm-3 col-md-3 col-lg-2 control-label">{{ $lang['p_no_regis'] }}</label>
+              <label class="col-sm-3 col-md-3 col-lg-2 control-label">Registration</label>
               <div class="col-sm-9 col-md-9 col-lg-10">
                 {{ select("p_no_regis", $module_access_select, $row['p_no_regis'], 'class="select2"') }}
               </div>
             </div>
+
+            
             <div class="form-group">
-              <label class="col-sm-3 col-md-3 col-lg-2 control-label">{{ $lang['p_a1'] }}</label>
+              <label class="col-sm-3 col-md-3 col-lg-2 control-label">Perkembangan 1</label>
               <div class="col-sm-9 col-md-9 col-lg-10">
                 <input type="text" name="p_a1" value="{{ $row['p_a1'] }}" class="form-control input-sm" />
               </div>
             </div>
+            
             <div class="form-group">
-              <label class="col-sm-3 col-md-3 col-lg-2 control-label">{{ $lang['p_a2'] }}</label>
+              <label class="col-sm-3 col-md-3 col-lg-2 control-label">Perkembangan 2</label>
               <div class="col-sm-9 col-md-9 col-lg-10">
                 <input type="text" name="p_a2" value="{{ $row['p_a2'] }}" class="form-control input-sm" />
               </div>
             </div>
+            
             <div class="form-group">
-              <label class="col-sm-3 col-md-3 col-lg-2 control-label">{{ $lang['p_a3'] }}</label>
+              <label class="col-sm-3 col-md-3 col-lg-2 control-label">Perkembangan 3</label>
               <div class="col-sm-9 col-md-9 col-lg-10">
                 <input type="text" name="p_a3" value="{{ $row['p_a3'] }}" class="form-control input-sm" />
               </div>
             </div>
+            
             <div class="form-group">
-              <label class="col-sm-3 col-md-3 col-lg-2 control-label">{{ $lang['p_a4'] }}</label>
+              <label class="col-sm-3 col-md-3 col-lg-2 control-label">Perkembangan 4</label>
               <div class="col-sm-9 col-md-9 col-lg-10">
                 <input type="text" name="p_a4" value="{{ $row['p_a4'] }}" class="form-control input-sm" />
               </div>
             </div>
+            
             <div class="form-group">
-              <label class="col-sm-3 col-md-3 col-lg-2 control-label">{{ $lang['p_a5'] }}</label>
+              <label class="col-sm-3 col-md-3 col-lg-2 control-label">Perkembangan 5</label>
               <div class="col-sm-9 col-md-9 col-lg-10">
                 <input type="text" name="p_a5" value="{{ $row['p_a5'] }}" class="form-control input-sm" />
               </div>
             </div>
+            
             <div class="form-group">
-              <label class="col-sm-3 col-md-3 col-lg-2 control-label">{{ $lang['p_a6'] }}</label>
+              <label class="col-sm-3 col-md-3 col-lg-2 control-label">Perkembangan 6</label>
               <div class="col-sm-9 col-md-9 col-lg-10">
                 <input type="text" name="p_a6" value="{{ $row['p_a6'] }}" class="form-control input-sm" />
               </div>
             </div>
+
+           
             <div class="form-group">
               <label class="col-sm-3 col-md-3 col-lg-2 control-label"></label>
               <div class="col-sm-9 col-md-9 col-lg-10">

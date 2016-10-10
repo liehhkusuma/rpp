@@ -10,47 +10,16 @@ $conf['page']['bo_users'] = [
 	'name' => 'Users',
 	'type' => 'User',
 ];
-/* Registran */
-$conf['page']['bo_registran'] = [
-	'parent' => 'Registran Management',
-	'name' => 'registran',
-	'type' => 'registran',
+/* Registration */
+$conf['page']['bo_registration'] = [
+	'parent' => 'Registration Management',
+	'name' => 'registration',
+	'type' => 'registration',
 ];
-/* Menu */
-$conf['page']['bo_menu'] = [
-	'parent' => 'Users Management',
-	'name' => 'Menu',
-	'type' => 'Menu',
+/* Registration User */
+$conf['page']['bo_registration_user'] = [
+	'parent' => 'Registration User Management',
+	'name' => 'registrationuser',
+	'type' => 'registrationuser',
 ];
-/* Module */
-$conf['page']['bo_module'] = [
-	'parent' => 'Users Management',
-	'name' => 'Module',
-	'type' => 'Module',
-];
-/* Access Level */
-$conf['page']['bo_user_level'] = [
-	'parent' => 'Users Management',
-	'name' => 'Module Access',
-	'type' => 'Access',
-];
-/* Slide */
-$conf['page']['bo_slide'] = [
-	'parent' => 'Slider Management',
-	'name' => 'Slider',
-	'type' => 'Slider',
-];
-/* Static */
-$conf['page']['bo_static'] = [
-	'parent' => 'Static Management',
-	'name' => 'Static',
-	'type' => 'Static',
-];
-/* Gallery */
-$conf['page']['bo_gallery'] = [
-	'parent' => 'Gallery Management',
-	'name' => 'Gallery',
-	'type' => 'Gallery',
-];
-
 return $conf;

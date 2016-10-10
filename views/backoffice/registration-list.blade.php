@@ -3,25 +3,25 @@
 @section('table')
 <?php ob_start(); ?>
 <div class="table-responsive">
-<table class="table table-bordered table-striped table-hover">
+<table class="table table-bordered table-striped table-hover sortable" data-table="BoMenuElq">
   <thead>
     <tr>
-      <td>No</td>
+      <td width="40px">No</td>
       <td>Registran</td>
-      <td>Action</td>
+      <td width="80px">Action</td>
     </tr>
   </thead>
   <tbody>
   @if ($data->count())
     @foreach ($data as $no => $row)
-      <tr>
-        <td>{{ $data->numPage() + $no+1 }}</td>
-        <td>{{ $row['registran_code'] }}</td>
-        <td>
+    <tr>
+      <td>{{ $data->numPage() + $no+1 }}</td>
+      <td>{{ $row['registran_code'] }}</td>
+      <td>
           <a href="{{ route($ctrl.':edit', ['id' => $row['p_id']]) }}" class="btn btn-primary btn-xs tip-top" data-original-title="update"><i class="fa fa-pencil"></i></a>
           <a ajax-confirm="delete" href="{{ route($ctrl.':delete', ['id' => $row['p_id']]) }}" class="btn btn-danger btn-xs tip-top open-dialog" data-original-title="Delete"><i class="fa fa-trash-o"></i></a>
-        </td>
-      </tr>
+      </td>
+    </tr>
     @endforeach
   @else
     @include('backoffice.includes.data-not-found')
@@ -41,6 +41,7 @@
 <div id="content-header">
 <h1>{{ $page['name'] }} - List</h1>
 <div class="btn-group">
+  <!-- <a href="javascript:;" class="btn btn-large btn-sorting"><span class="fa fa-sort"></span> Sorting </a> -->
   <a href="{{ route($ctrl.':list') }}" class="btn btn-large" title="Manage Files"><i class="fa fa-list"></i> List &nbsp; <span class="label label-danger">{{ $count_data }}</span></a>
   <a href="{{ route($ctrl.':add') }}" class="btn btn-large" title="Manage Files"><i class="fa fa-plus"></i> Add</a>
 </div>

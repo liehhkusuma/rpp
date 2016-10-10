@@ -9,10 +9,9 @@ class UserCtrl extends AdminCtrl{
     function listAction($paging = ""){
         $_SESSION['list_page'] = current_url();
         // Searching
-        /*->where('bu_level', '!=', 0)->where('bu_level', '!=', 1)*/
         $elq = $this->elq;
         if($keyword = get('keyword')){
-            $elq = $elq->like("bu_real_name,bu_no_regis", $keyword);
+            $elq = $elq->like("bu_name,bu_real_name,bu_email", $keyword);
         }
         // Get Data
         $data = $elq->paginate();
@@ -103,7 +102,7 @@ class UserCtrl extends AdminCtrl{
 
     	$elq->fill($_POST);
 
-        $field_rules = "bu_real_name,bu_no_regis";
+        $field_rules = "bu_real_name,bu_email,bu_name,bu_init,bu_pic";
         if($elq->isValid('only', $field_rules)){
         	$elq->status(post('status'));
             if(empty($_POST['bu_passwd'])) 
